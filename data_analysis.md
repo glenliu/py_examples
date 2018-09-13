@@ -2,37 +2,40 @@
 [Reference](https://mp.weixin.qq.com/s?__biz=MzAxMjUyNDQ5OA==&mid=2653556933&idx=1&sn=283e9a04de0734743c90898803b72495&chksm=806e3e78b719b76e6ede9ec6ac7a7376e3255191ad3ffc180d4c126ed1722a635589e566fde7&mpshare=1&scene=1&srcid=09135t9mN8icnfz3dQsRB6DH&pass_ticket=fNZEAa0VpZ0hpDCvIn0ITCA%2B58I0zv%2Be9yfSsGCpQ1jNxx9Db30pZzRuDGuSVAtq#rd)
 
 ## Index
- [Data collecting](#Data collecting)
+- [Data collecting](#Data--collecting)
 
- [Public data sources](#Public data sources)
+ 
+- [Public data sources](#Public--data--sources)
 
- Crawlers
+ 
+- [Crawlers](#Crawlers)
 
- Data Storage and Load
+ 
+- [Data Storage and Load](#Data--Storage--and--Load)
 
- Storage
+- [Storage](#Storage)
 
- Load
+- [Load](#Load)
 
- Pre-process & Mangling
+- [Pre-process & Mangling](#[Pre-process--Mangling)
 
- Modeling & analysis
+- [Modeling & analysis](#Modeling--analysis)
 
- Statistics basics
+- [Statistics basics](#Statistics--basics)
 
- Metrics
+- [Metris](#Metrics)
 
- Test
+- [Test](#Test)
 
- Common regression
+- [Common regression](#)
 
- Basic classifying, categorising
+- [Basic classifying, categorising](#Basic--classifying--categorising)
 
- Feature Engineering
+- [Feature Engineering](#Feature--Engineering)
 
- Data Visualization
+- [Data Visualization](#Data--Visualization)
 
- Put into Practice
+- [Put into Practice](#Put--into--Practice)
 
 ## Data Collecting
 
