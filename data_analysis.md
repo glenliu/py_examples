@@ -5,17 +5,17 @@
 * [Data collecting](#Data--Collecting)
 
  
-- [Public data sources](#Public--data--sources)
+* [Public data sources](#Public--data--sources)
 
  
-- [Crawlers](#Crawlers)
+* [Crawlers](#Crawlers)
 
  
-- [Data Storage and Load](#Data--Storage--and--Load)
+* [Data Storage and Load](#Data--Storage--and--Load)
 
-- [Storage](#Storage)
+* [Storage](#Storage)
 
-- [Load](#Load)
+* [Load](#Load)
 
 - [Pre-process & Mangling](#[Pre-process--Mangling)
 
