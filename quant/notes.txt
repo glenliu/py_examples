@@ -1,0 +1,24 @@
+positions : pd.DataFrame, optional
+    Daily net position values.
+     - Time series of dollar amount invested in each position and cash.
+     - Days where stocks are not held can be represented by 0 or NaN.
+     - Non-working capital is labelled 'cash'
+     - Example:
+        index         'AAPL'         'MSFT'          cash
+        2004-01-09    13939.3800     -14012.9930     711.5585
+        2004-01-12    14492.6300     -14624.8700     27.1821
+        2004-01-13    -13853.2800    13653.6400      -43.6375
+transactions : pd.DataFrame, optional
+    Executed trade volumes and fill prices.
+    - One row per trade.
+    - Trades on different names that occur at the
+      same time will have identical indicies.
+    - Example:
+        index                  amount   price    symbol
+        2004-01-09 12:18:01    483      324.12   'AAPL'
+        2004-01-09 12:18:01    122      83.10    'MSFT'
+        2004-01-13 14:12:23    -75      340.43   'AAPL'
+
+index	amount	price	symbol
+0	2018-07-17 12:18:01	100	750.0	'600519'
+1	2019-04-01 14:12:23	-100	860.0	'600519'
