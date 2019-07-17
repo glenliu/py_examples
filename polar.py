@@ -12,7 +12,7 @@ width, height = matplotlib.rcParams['figure.figsize']
 size = min(width, height)
 # make a square figure
 fig = figure(figsize=(size, size))
-ax = fig.add_axes([0.1, 0.1, 0.8, 0.8], polar=True, axisbg='#d5de9c')
+ax = fig.add_axes([0.1, 0.1, 0.8, 0.8], polar=True) #, axisbg='#d5de9c')
 
 r = np.arange(0, 3.0, 0.01)
 theta = 2*np.pi*r
