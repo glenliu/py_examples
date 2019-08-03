@@ -1,5 +1,7 @@
+import pdb
 num=0
 for i in range(100,1000,1): 
+	#pdb.set_trace()
 	g=str(i)[2] 
 	s=str(i)[1] 
 	b=str(i)[0]
@@ -8,7 +10,3 @@ for i in range(100,1000,1):
 		print(str(i))
 		num=num+1
 		print("num="+str(num))
-
-
-	
-
