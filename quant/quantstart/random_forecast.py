@@ -3,7 +3,7 @@
 
 import numpy as np
 import pandas as pd
-import Quandl   # Necessary for obtaining financial data easily
+# import Quandl   # Necessary for obtaining financial data easily
 
 from backtest import Strategy, Portfolio
 
@@ -26,6 +26,8 @@ class RandomForecastingStrategy(Strategy):
         # The first five elements are set to zero in order to minimise
         # upstream NaN errors in the forecaster.
         signals['signal'][0:5] = 0.0
+        print("signals")
+        print(signals)
         return signals
         
 # random_forecast.py
@@ -73,14 +75,14 @@ class MarketOnOpenPortfolio(Portfolio):
         # Construct the portfolio DataFrame to use the same index
         # as 'positions' and with a set of 'trading orders' in the
         # 'pos_diff' object, assuming market open prices.
-        portfolio = self.positions*self.bars['Open']
+        portfolio = self.positions.mul(self.bars['Open'],axis='index')
         pos_diff = self.positions.diff()
 
         # Create the 'holdings' and 'cash' series by running through
         # the trades and adding/subtracting the relevant quantity from
         # each column
-        portfolio['holdings'] = (self.positions*self.bars['Open']).sum(axis=1)
-        portfolio['cash'] = self.initial_capital - (pos_diff*self.bars['Open']).sum(axis=1).cumsum()
+        portfolio['holdings'] = (self.positions.mul(self.bars['Open'],axis='index')).sum(axis=1)
+        portfolio['cash'] = self.initial_capital - (pos_diff.mul(self.bars['Open'],axis='index')).sum(axis=1)  #.cumsum()
 
         # Finalise the total and bar-based returns based on the 'cash'
         # and 'holdings' figures for the portfolio
@@ -93,7 +95,12 @@ if __name__ == "__main__":
     # follows the S&P500) from Quandl (requires 'pip install Quandl'
     # on the command line)
     symbol = 'SPY'
-    bars = Quandl.get("GOOG/NYSE_%s" % symbol, collapse="daily")
+    # bars = Quandl.get("GOOG/NYSE_%s" % symbol, collapse="daily")
+
+    bars = pd.DataFrame([100,102,104,101,99,98,102,105,107,101,103,110,112,104],columns=["Open"])
+    #bars.set_index(pd.date_range(start='2019-07-31', periods=len(bars),freq="D"))
+
+    print(bars)
 
     # Create a set of random forecasting signals for SPY
     rfs = RandomForecastingStrategy(symbol, bars)
@@ -103,4 +110,4 @@ if __name__ == "__main__":
     portfolio = MarketOnOpenPortfolio(symbol, bars, signals, initial_capital=100000.0)
     returns = portfolio.backtest_portfolio()
 
-    print returns.tail(10)        
+    print(returns.tail(100))
